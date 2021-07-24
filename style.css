@@ -1,0 +1,362 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+/* GENERAL STYLES */
+
+:root {
+  --clr-green: #8fbd73;
+  --clr-red: #de5f5f;
+  --clr-orange: #f28867;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f4f4f4;
+}
+
+button,
+input {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+}
+
+/* LOGIN SCREEN */
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.bank-info h1 {
+  color: var(--clr-red);
+  font-size: 4rem;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+}
+
+.login__input,
+.btn-login {
+  width: 25rem;
+  padding: 0.8rem;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 100vw;
+  font-family: "poppins", sans-serif;
+}
+
+.login__input {
+  background-color: white;
+  cursor: text;
+}
+
+.btn-login {
+  background-color: var(--clr-red);
+  color: white;
+}
+
+.btn-login:hover {
+  background-color: salmon;
+}
+
+/* ACCOUNT VIEW */
+
+.app {
+  display: none;
+}
+
+.wrapper {
+  margin-top: 6rem;
+  padding: 1rem;
+}
+
+/* nav */
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  background-color: var(--clr-red);
+}
+
+.welcome,
+.logout {
+  color: white;
+  font-size: 1.2rem;
+}
+
+.logout:hover {
+  text-decoration: underline;
+}
+
+/* balance */
+.balance {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  padding: 2rem;
+}
+
+.balance p {
+  color: #6d6c6c;
+}
+
+/* movements */
+.movements-container,
+.movements-container__row {
+  padding: 1rem;
+  border-radius: 1vh;
+  font-size: 1.4rem;
+}
+
+.movements-container {
+  overflow: auto;
+  height: 40rem;
+  background-color: white;
+}
+
+.movements-container__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+  background-color: #f4f4f4;
+}
+
+.movement-type--deposit,
+.movement-type--withdrawal {
+  text-align: center;
+  font-size: 1rem;
+  color: white;
+  width: 10rem;
+  padding: 0.3rem;
+  border-radius: 100vh;
+}
+
+.movement-type--deposit {
+  background-color: var(--clr-green);
+}
+
+.movement-type--withdrawal {
+  background-color: var(--clr-red);
+}
+
+.movement-date {
+  font-size: 1rem;
+  color: #6d6c6c;
+}
+
+/* summary */
+.movements-info__summary {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+.summary-value {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.summary-value--in {
+  color: var(--clr-green);
+}
+
+.summary-value--out {
+  color: var(--clr-red);
+}
+
+.btn--sort:hover {
+  text-decoration: underline;
+}
+
+/* operations */
+.operation {
+  border-radius: 1vh;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.operation--transfer {
+  background-color: var(--clr-orange);
+}
+
+.operation--loan {
+  background-color: var(--clr-green);
+}
+
+.operation--close {
+  background-color: var(--clr-red);
+}
+
+/* form styles */
+.form__input {
+  width: 35%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 1vh;
+  background-color: rgba(255, 255, 255, 0.555);
+  cursor: text;
+}
+
+.form__input + .form__input,
+.form__input + .btn,
+.btn + .btn {
+  margin-left: 0.5rem;
+}
+
+.form {
+  padding: 1rem 0 1rem 0;
+}
+
+.btn {
+  color: white;
+  font-size: 1.8rem;
+}
+
+.btn:hover {
+  color: rgba(255, 255, 255, 0.507);
+}
+
+/* timer */
+.logout-timer {
+  padding: 1rem 0 2rem 0;
+  font-size: 1.2rem;
+  text-align: end;
+}
+
+.timer {
+  font-weight: bold;
+}
+
+/* MODAL WINDOW AND OVERLAY */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.445);
+}
+
+.modal-window {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 25rem;
+  padding: 2rem;
+  transform: translate(-50%, 0);
+  margin-top: 8rem;
+  z-index: 1;
+  border-radius: 1vh;
+  background-color: #f4f4f4;
+}
+
+.modal-window h1,
+.account-info {
+  font-size: 1.3rem;
+}
+
+.account-info {
+  padding: 1.2rem;
+}
+
+.account-info__data {
+  font-weight: bold;
+}
+
+.account-info:not(:last-child) {
+  border-bottom: 1px solid black;
+}
+
+.button-wrapper {
+  width: 100%;
+  text-align: end;
+}
+
+.btn--close-window {
+  font-size: 1.8rem;
+}
+
+.hidden {
+  display: none;
+}
+
+/* BIGGER SCREENS */
+
+@media only screen and (min-width: 890px) {
+  /* LOGIN VIEW */
+  .bank-info p {
+    font-size: 1.5rem;
+  }
+
+  /* ACCOUNT VIEW */
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 8rem;
+  }
+
+  .welcome {
+    font-size: 1.8rem;
+  }
+
+  /* balance */
+  .balance__value {
+    font-size: 3rem;
+  }
+
+  .date {
+    font-size: 1.5rem;
+  }
+
+  /* movements */
+  .movements-container {
+    width: 55rem;
+  }
+
+  /* summary */
+  .movements-info__summary {
+    font-size: 1.5rem;
+  }
+
+  .summary-value {
+    font-size: 1.8rem;
+  }
+
+  /* operations */
+  .operations {
+    margin: 8rem 0 0 3rem;
+  }
+
+  .operation {
+    height: 12rem;
+    font-size: 1.5rem;
+  }
+
+  .form__input {
+    font-size: 1.2rem;
+  }
+}

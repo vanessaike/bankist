@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+      integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="./script.js"></script>
+    <title>Bankist</title>
+  </head>
+  <body>
+    <div class="overlay hidden"></div>
+    <!--LOGIN PAGE-->
+    <section class="login-page">
+      <div class="bank-info">
+        <h1>Bankist</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+      </div>
+
+      <form class="login">
+        <input type="text" class="login__input login__input--username" placeholder="Username" />
+        <input type="password" class="login__input login__input--pin" placeholder="PIN" />
+
+        <button class="btn-login btn-login--login">Login</button>
+        <button class="btn-login btn-login--data">Check test data</button>
+      </form>
+    </section>
+
+    <!-- APP -->
+    <main class="app">
+      <!--NAV BAR-->
+      <nav class="nav">
+        <h3 class="welcome">Welcome back, <span class="username">username</span></h3>
+        <button class="logout"><i class="fas fa-power-off" aria-hidden="true"></i> Logout</button>
+      </nav>
+
+      <div class="wrapper">
+        <div class="movements-info">
+          <!--BALANCE-->
+          <div class="balance">
+            <div class="date">
+              <h3>Current Balance</h3>
+              <p>As of <span class="balance__date">29/05/2021</span></p>
+            </div>
+            <h2><span class="balance__value">US$300</span></h2>
+          </div>
+
+          <!--MOVEMENTS-->
+          <div class="movements-container">
+            <div class="movements-container__row">
+              <p class="movement movement-type--deposit">1- Deposit</p>
+              <p class="movement-date">15/05/2021</p>
+              <p class="movement-value">U$50</p>
+            </div>
+
+            <div class="movements-container__row">
+              <p class="movement movement-type--withdrawal">2- Withdrawal</p>
+              <p class="movement-date">15/05/2021</p>
+              <p class="movement-value">-U$500</p>
+            </div>
+          </div>
+
+          <!--SUMMARY-->
+          <div class="movements-info__summary">
+            <p>In <span class="summary-value summary-value--in">U$ 100</span></p>
+            <p>Out <span class="summary-value summary-value--out">U$ 50</span></p>
+            <button class="btn--sort"><i class="fas fa-arrow-circle-down" aria-hidden="true"></i> Sort</button>
+          </div>
+        </div>
+
+        <!--OPERATIONS-->
+        <div class="operations">
+          <!--TRANSFER-->
+          <div class="operation operation--transfer">
+            <h3>Transfer money</h3>
+            <form class="form form--transfer">
+              <input type="text" class="form__input form__input--to" placeholder="Transfer to" />
+              <input type="number" class="form__input form__input--amount" placeholder="Amount" />
+              <button class="btn btn--transfer" aria-label="Transfer">
+                <i class="fas fa-arrow-circle-right" aria-hidden="true"></i>
+              </button>
+              <button class="btn btn--data" aria-label="Accounts to test">
+                <i class="fas fa-question-circle" aria-hidden="true"></i>
+              </button>
+            </form>
+          </div>
+
+          <!--LOAN-->
+          <div class="operation operation--loan">
+            <h3>Request loan</h3>
+            <form class="form form--loan">
+              <input type="number" class="form__input form__input--loan" placeholder="Amount" />
+              <button class="btn btn--loan" aria-label="Request loan">
+                <i class="fas fa-arrow-circle-right" aria-hidden="true"></i>
+              </button>
+            </form>
+          </div>
+
+          <!--CLOSE ACCOUNT-->
+          <div class="operation operation--close">
+            <h3>Close account</h3>
+            <form class="form form--close">
+              <input type="text" class="form__input form__input--username" placeholder="Username" />
+              <input type="password" class="form__input form__input--pin" placeholder="PIN" />
+              <button class="btn btn--close" aria-label="Close account">
+                <i class="fas fa-arrow-circle-right" aria-hidden="true"></i>
+              </button>
+              <button class="btn btn--data" aria-label="Accounts to test">
+                <i class="fas fa-question-circle" aria-hidden="true"></i>
+              </button>
+            </form>
+          </div>
+
+          <!--TIMER-->
+          <div class="logout-timer">
+            <p>You will be logged out in <span class="timer">05:00</span></p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- MODAL WINDOW -->
+    <div class="modal-window hidden">
+      <div class="button-wrapper">
+        <button class="btn--close-window" aria-label="Close window">
+          <i class="far fa-times-circle" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <h1>Fictional accounts so you can login and test the features:</h1>
+      <div class="account-info">
+        <p><span class="account-info__data">Username:</span> vi</p>
+        <p><span class="account-info__data">PIN:</span> 1111</p>
+      </div>
+
+      <div class="account-info">
+        <p><span class="account-info__data">Username:</span> jsw</p>
+        <p><span class="account-info__data">PIN:</span> 2222</p>
+      </div>
+
+      <div class="account-info">
+        <p><span class="account-info__data">Username:</span> ms</p>
+        <p><span class="account-info__data">PIN:</span> 3333</p>
+      </div>
+
+      <div class="account-info">
+        <p><span class="account-info__data">Username:</span> ljr</p>
+        <p><span class="account-info__data">PIN:</span> 4444</p>
+      </div>
+
+      <div class="account-info">
+        <p><span class="account-info__data">Username:</span> mod</p>
+        <p><span class="account-info__data">PIN:</span> 5555</p>
+      </div>
+    </div>
+  </body>
+</html>
