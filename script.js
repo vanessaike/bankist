@@ -142,7 +142,7 @@ const formatCurrencies = function (value, locale, currency) {
   return new Intl.NumberFormat(locale, options).format(value);
 };
 
-// formnat the dates
+// format the dates
 const formatDates = function (date, locale) {
   //calculate how many days have passed since the movement was made
   const calcDaysPassed = (day2, day1) => Math.round(Math.abs(day2 - day1) / (1000 * 60 * 60 * 24));
@@ -315,8 +315,7 @@ btnTransfer.addEventListener("click", function (e) {
     updateUI(currentUser);
 
     //reset timer
-    clearInterval(timer);
-    timer = startLogOutTimer();
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   } else {
     alert("Something went wrong. Check if all the data is valid.");
   }
